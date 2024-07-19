@@ -40,8 +40,12 @@ router.get('/oauth_redirect', async (req, res) => {
 });
 
 const getToken = () => {
-  console.log('Retrieved Token:', tokenData.accessToken);
-  return tokenData.accessToken;
+  const token = tokenData.accessToken;
+  console.log('Retrieved Token:', token);
+  if (!token || token.trim() === '') {
+    throw new Error('Invalid token retrieved');
+  }
+  return token.trim();
 };
 
 module.exports = { router, getToken };
