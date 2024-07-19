@@ -21,10 +21,16 @@ router.get('/oauth_redirect', async (req, res) => {
       }
     });
 
+    if (!response.data.ok) {
+      console.error('Error during OAuth flow:', response.data.error);
+      return res.status(500).send('OAuth failed');
+    }
+
     const { access_token, team } = response.data;
     const botUserId = response.data.bot_user_id;
 
     tokenData = { teamId: team.id, accessToken: access_token, botUserId };
+    console.log('Token Data:', tokenData);
 
     res.send('App installed successfully!');
   } catch (error) {
@@ -33,6 +39,9 @@ router.get('/oauth_redirect', async (req, res) => {
   }
 });
 
-const getToken = () => tokenData.accessToken;
+const getToken = () => {
+  console.log('Retrieved Token:', tokenData.accessToken);
+  return tokenData.accessToken;
+};
 
 module.exports = { router, getToken };
