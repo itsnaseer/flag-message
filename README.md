@@ -96,14 +96,12 @@ heroku config:set SLACK_BOT_TOKEN=your-bot-user-oauth-token
 heroku config:set SLACK_WORKSPACE=your-workspace-name
 heroku config:set FLAGGED_MESSAGE_CHANNEL_ID=your-channel-id
 ```
+
 # Slack Client Setup
 ### Step 1: Add the App to Your Workspace
 
 	1.	Go to the Slack workspace where you installed the app.
-	2.	Invite the bot to the channels where it will be used:
-        ```sh
-        /invite @your-bot-name
-        ```
+	2.	Invite the bot to the channels where it will be used: `/invite @your-bot-name`
 
 ### Step 2: Configure the Reaction and Shortcut
 
