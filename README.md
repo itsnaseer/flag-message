@@ -57,10 +57,9 @@ This app needs to be added to all channels for flagging. It will add itself to p
 
 1. In your app settings, go to `Event Subscriptions`.
 2. Enable `Enable Events`.
-3. Add the Request URL: `https://<your-heroku-app-name>.herokuapp.com/slack/events` (Replace `<your-heroku-app-name>` with your Heroku app name).
-4. Under `Subscribe to bot events`, add:
+3. Under `Subscribe to bot events`, add:
     - `reaction_added`
-5. Click `Save Changes`.
+4. Click `Save Changes`.
 
 ### Step 5: Install the App
 
@@ -85,15 +84,15 @@ This app needs to be added to all channels for flagging. It will add itself to p
 
 ### Step 3: Set Environment Variables
 
-Set the following environment variables in your Heroku app:
+Set the following Config Vars in your Heroku app:
 
-    - SLACK_CLIENT_ID=your-client-id
-    - SLACK_CLIENT_SECRET=your-client-secret
-    - SLACK_SIGNING_SECRET=your-signing-secret
-    - SLACK_APP_TOKEN=your-app-level-token
-    - SLACK_BOT_TOKEN=your-bot-user-oauth-token
-    - SLACK_WORKSPACE=your-workspace-name
-    - FLAGGED_MESSAGE_CHANNEL_ID=your-channel-id
+- SLACK_CLIENT_ID=your-client-id
+- SLACK_CLIENT_SECRET=your-client-secret
+- SLACK_SIGNING_SECRET=your-signing-secret
+- SLACK_APP_TOKEN=your-app-level-token
+- SLACK_BOT_TOKEN=your-bot-user-oauth-token
+- SLACK_WORKSPACE=your-workspace-name
+- FLAGGED_MESSAGE_CHANNEL_ID=your-channel-id
 
 
 # Slack Client Setup
