@@ -98,6 +98,7 @@ heroku config:set FLAGGED_MESSAGE_CHANNEL_ID=your-channel-id
 ```
 
 # Slack Client Setup
+
 ### Step 1: Add the App to Your Workspace
 
 	1.	Go to the Slack workspace where you installed the app.
@@ -105,7 +106,7 @@ heroku config:set FLAGGED_MESSAGE_CHANNEL_ID=your-channel-id
 
 ### Step 2: Configure the Reaction and Shortcut
 
-	1.	To flag a message, add the reaction :flag-message: to the message.
+	1.	To flag a message, add the reaction `:flag-message:` to the message.
 	2.	Alternatively, use the message shortcut to flag the message:
         •	Click on the three dots next to a message.
         •	Select More message shortcuts.
