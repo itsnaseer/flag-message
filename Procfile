@@ -1,0 +1,1 @@
+echo 'worker: node app.js' > Procfile
