@@ -87,15 +87,14 @@ This app needs to be added to all channels for flagging. It will add itself to p
 
 Set the following environment variables in your Heroku app:
 
-```
-heroku config:set SLACK_CLIENT_ID=your-client-id
-heroku config:set SLACK_CLIENT_SECRET=your-client-secret
-heroku config:set SLACK_SIGNING_SECRET=your-signing-secret
-heroku config:set SLACK_APP_TOKEN=your-app-level-token
-heroku config:set SLACK_BOT_TOKEN=your-bot-user-oauth-token
-heroku config:set SLACK_WORKSPACE=your-workspace-name
-heroku config:set FLAGGED_MESSAGE_CHANNEL_ID=your-channel-id
-```
+    - SLACK_CLIENT_ID=your-client-id
+    - SLACK_CLIENT_SECRET=your-client-secret
+    - SLACK_SIGNING_SECRET=your-signing-secret
+    - SLACK_APP_TOKEN=your-app-level-token
+    - SLACK_BOT_TOKEN=your-bot-user-oauth-token
+    - SLACK_WORKSPACE=your-workspace-name
+    - FLAGGED_MESSAGE_CHANNEL_ID=your-channel-id
+
 
 # Slack Client Setup
 
