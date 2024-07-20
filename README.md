@@ -99,23 +99,13 @@ Set the following Config Vars in your Heroku app:
 
 ### Step 1: Add the App to Your Workspace
 
-	1.	Go to the Slack workspace where you installed the app.
-	2.	Invite the bot to the channels where it will be used: `/invite @your-bot-name`
+1.	Go to the Slack workspace where you installed the app.
+2.	Invite the bot to the channels where it will be used: `/invite @your-bot-name`
 
 ### Step 2: Configure the Reaction and Shortcut
 
-	1.	To flag a message, add the reaction `:flag-message:` to the message.
-	2.	Alternatively, use the message shortcut to flag the message:
-        •	Click on the three dots next to a message.
-        •	Select More message shortcuts.
-        •	Choose your app’s shortcut to flag the message.
-
-# Environment Variables
-
-	•	SLACK_CLIENT_ID: Your Slack app’s Client ID.
-	•	SLACK_CLIENT_SECRET: Your Slack app’s Client Secret.
-	•	SLACK_SIGNING_SECRET: Your Slack app’s Signing Secret.
-	•	SLACK_APP_TOKEN: Your Slack app-level token for Socket Mode.
-	•	SLACK_BOT_TOKEN: Your Slack bot user OAuth token.
-	•	SLACK_WORKSPACE: Your Slack workspace name.
-	•	FLAGGED_MESSAGE_CHANNEL_ID: The Slack channel ID where flagged messages and additional details are sent.
+1.	To flag a message, add the reaction `:flag-message:` to the message.
+2.	Alternatively, use the message shortcut to flag the message:
+    •	Click on the three dots next to a message.
+    •	Select More message shortcuts.
+    •	Choose your app’s shortcut to flag the message.
