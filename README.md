@@ -87,7 +87,7 @@ This app needs to be added to all channels for flagging. It will add itself to p
 
 Set the following environment variables in your Heroku app:
 
-```sh
+```
 heroku config:set SLACK_CLIENT_ID=your-client-id
 heroku config:set SLACK_CLIENT_SECRET=your-client-secret
 heroku config:set SLACK_SIGNING_SECRET=your-signing-secret
