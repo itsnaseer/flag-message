@@ -1,18 +1,15 @@
-const { App, ExpressReceiver } = require('@slack/bolt');
-require('dotenv').config();
-const express = require('express');
-const oauthRouter = require('./oauth');
-const { getToken } = require('./storage');
+const { App, SocketModeReceiver } = require('@slack/bolt');
 
-const receiver = new ExpressReceiver({ signingSecret: process.env.SLACK_SIGNING_SECRET });
+// Initialize your Socket Mode receiver
+const socketModeReceiver = new SocketModeReceiver({
+  appToken: process.env.SLACK_APP_TOKEN,
+});
 
+// Initialize your Bolt app with the receiver
 const app = new App({
-  receiver,
+  token: process.env.SLACK_BOT_TOKEN,
+  receiver: socketModeReceiver,
   signingSecret: process.env.SLACK_SIGNING_SECRET,
-  token: async ({ teamId }) => {
-    const tokenData = await getToken(teamId);
-    return tokenData.accessToken;
-  }
 });
 
 const messageFlagHandler = async ({ channel, ts, user, client }) => {
@@ -133,7 +130,7 @@ app.action('dismiss_button', async ({ ack, body, client }) => {
   // Send a thank you message for dismissing
   await client.chat.postMessage({
     channel: body.user.id,
-    text: 'Message flag dismissed. Thank you for checking.'
+    text: 'Thank you for checking.'
   });
 });
 
@@ -145,19 +142,18 @@ app.view('submit_modal', async ({ ack, view, client }) => {
   // Send the message with additional details to the specified channel
   await client.chat.postMessage({
     channel: process.env.FLAGGED_MESSAGE_CHANNEL_ID,
-    text: `A message was flagged:\n>${messageText}\n<${messageLink}|View message>\n\n*Additional Details:*\n${additionalDetails}`,
-    "unfurl_links": false
+    text: `A message was flagged:\n>${messageText}\n<${messageLink}|View message>\n\n*Additional Details:*\n${additionalDetails}`
   });
 
   // Thank the user for flagging the message
   await client.chat.postMessage({
     channel: user,
-    text: 'Thank you for adding details. Administrators will review the flagged message shortly.'
+    text: 'Thank you for flagging the message. Administrators will review it.'
   });
 });
 
 // Start your app
 (async () => {
-  await app.start(process.env.PORT || 3000);
-  console.log('⚡️ Bolt app is running!');
+  await app.start();
+  console.log('⚡️ Bolt app is running in Socket Mode!');
 })();
