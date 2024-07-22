@@ -44,6 +44,7 @@ This app needs to be added to all channels for flagging. It will add itself to p
     - `mpim:read`
     - `reactions:read`
     - `users:read`
+    - `links:write`
 3. Click `Save Changes`.
 
 ### Step 3: Enable Socket Mode
