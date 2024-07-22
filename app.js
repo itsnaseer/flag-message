@@ -130,7 +130,7 @@ app.action('dismiss_button', async ({ ack, body, client }) => {
   // Send a thank you message for dismissing
   await client.chat.postMessage({
     channel: body.user.id,
-    text: 'Thank you for checking.'
+    text: 'Flagged message dismissed. Thank you for checking.'
   });
 });
 
@@ -148,7 +148,7 @@ app.view('submit_modal', async ({ ack, view, client }) => {
   // Thank the user for flagging the message
   await client.chat.postMessage({
     channel: user,
-    text: 'Thank you for flagging the message. Administrators will review it.'
+    text: 'Thank you for providing details. Administrators will review the flagged message shortly.'
   });
 });
 

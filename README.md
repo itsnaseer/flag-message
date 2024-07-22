@@ -40,11 +40,11 @@ This app needs to be added to all channels for flagging. It will add itself to p
     - `groups:read`
     - `im:history`
     - `im:read`
+    - `links:write`
     - `mpim:history`
     - `mpim:read`
     - `reactions:read`
     - `users:read`
-    - `links:write`
 3. Click `Save Changes`.
 
 ### Step 3: Enable Socket Mode
