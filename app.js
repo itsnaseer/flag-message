@@ -1,5 +1,5 @@
 const { App, SocketModeReceiver } = require('@slack/bolt');
-
+require('newrelic')
 // Initialize your Socket Mode receiver
 const socketModeReceiver = new SocketModeReceiver({
   appToken: process.env.SLACK_APP_TOKEN,
@@ -35,36 +35,14 @@ const messageFlagHandler = async ({ channel, ts, user, client }) => {
     // Send a DM to the user who flagged the message
     await client.chat.postMessage({
       channel: user,
-      text: 'We noticed you flagged a message. Please use the Continue button below to provide additional details or use the Dismiss button if this was an error.',
+      text: 'We noticed you flagged a message. An administrator will review the message and reach out with next steps as needed. ',
       blocks: [
         {
-          type: 'section',
-          text: {
-            type: 'mrkdwn',
-            text: 'We noticed you flagged a message. Please use the Continue button below to provide additional details or use the Dismiss button if this was an error.'
+          "type": "section",
+          "text": {
+            "type": "mrkdwn",
+            "text": "We noticed you flagged a message. An administrator will review the message and reach out with next steps as needed."
           }
-        },
-        {
-          type: 'actions',
-          elements: [
-            {
-              type: 'button',
-              text: {
-                type: 'plain_text',
-                text: 'Continue'
-              },
-              action_id: 'continue_button',
-              value: JSON.stringify({ channel, ts, messageLink, messageText: message.text })
-            },
-            {
-              type: 'button',
-              text: {
-                type: 'plain_text',
-                text: 'Dismiss'
-              },
-              action_id: 'dismiss_button'
-            }
-          ]
         }
       ]
     });
