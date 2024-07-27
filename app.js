@@ -1,5 +1,5 @@
 const { App, SocketModeReceiver } = require('@slack/bolt');
-
+require('newrelic')
 // Initialize your Socket Mode receiver
 const socketModeReceiver = new SocketModeReceiver({
   appToken: process.env.SLACK_APP_TOKEN,
