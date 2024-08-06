@@ -1,0 +1,4 @@
+node_modules/@slack/
+.DS_STORE
+.venv
+package-lock.json

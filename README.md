@@ -77,11 +77,11 @@ This app needs to be added to all channels for flagging. It will add itself to p
 
 ### Step 2: Prepare Your Code
 
-1. Ensure your code repository has the following files:
-    - `app.js` (main application code)
-    - `package.json` (list of dependencies)
-    - `Procfile` (to specify the worker process)
-    - `.gitignore` (to ignore node_modules and other unnecessary files)
+Ensure your code repository has the following files:
+- `app.js` (main application code)
+- `package.json` (list of dependencies)
+- `Procfile` (to specify the worker process)
+- `.gitignore` (to ignore node_modules and other unnecessary files)
 
 ### Step 3: Set Environment Variables
 
@@ -107,6 +107,6 @@ Set the following Config Vars in your Heroku app:
 
 1.	To flag a message, add the reaction `:flag-message:` to the message.
 2.	Alternatively, use the message shortcut to flag the message:
-    •	Click on the three dots next to a message.
-    •	Select More message shortcuts.
-    •	Choose your app’s shortcut to flag the message.
+- Click on the three dots next to a message.
+- Select More message shortcuts.
+- Choose your app’s shortcut to flag the message.
